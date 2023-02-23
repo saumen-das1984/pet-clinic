@@ -10,10 +10,10 @@
 	<artifactId>pet-clinic-data</artifactId>
 	<name>Pet Clinic Data</name>
 	<description>Pet Clinic Data Module</description>
-	
+
 	<properties>
-        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-    </properties>
+		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+	</properties>
 
 	<build>
 		<plugins>
