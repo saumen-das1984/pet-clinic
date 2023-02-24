@@ -7,8 +7,6 @@ import com.spring.framework.guru.model.Owner;
 import com.spring.framework.guru.model.Vet;
 import com.spring.framework.guru.service.OwnerService;
 import com.spring.framework.guru.service.VetService;
-import com.spring.framework.guru.service.map.OwnerServiceMap;
-import com.spring.framework.guru.service.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
