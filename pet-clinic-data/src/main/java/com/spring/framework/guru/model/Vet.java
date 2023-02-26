@@ -1,6 +1,5 @@
 package com.spring.framework.guru.model;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 import lombok.Getter;
