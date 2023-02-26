@@ -8,7 +8,7 @@ import com.spring.framework.guru.model.Owner;
 import com.spring.framework.guru.service.OwnerService;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {

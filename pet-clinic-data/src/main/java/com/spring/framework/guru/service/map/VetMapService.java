@@ -8,7 +8,7 @@ import com.spring.framework.guru.model.Vet;
 import com.spring.framework.guru.service.VetService;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
