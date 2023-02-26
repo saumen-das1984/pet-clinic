@@ -1,15 +1,18 @@
 package com.spring.framework.guru.model;
 
-import java.util.Set;
+import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Owner extends Person {
+public class Visit extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
-	private Set<Pet> pets;
+
+	private LocalDate date;
+	private String description;
+	private Pet pet;
 
 }

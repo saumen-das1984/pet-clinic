@@ -2,9 +2,11 @@ package com.spring.framework.guru.model;
 
 import java.io.Serializable;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -1,8 +1,10 @@
 package com.spring.framework.guru.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class PetType extends BaseEntity{
 
 	private static final long serialVersionUID = 1L;
