@@ -1,9 +1,12 @@
 package com.spring.framework.guru.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.spring.framework.guru.model.Owner;
+import com.spring.framework.guru.model.Pet;
 import com.spring.framework.guru.model.PetType;
 import com.spring.framework.guru.model.Vet;
 import com.spring.framework.guru.service.OwnerService;
@@ -38,11 +41,33 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = new Owner();
         owner1.setFirstName("Owner");
         owner1.setLastName("One");
+        owner1.setAddress("Address One Street");
+        owner1.setCity("CityOne");
+        owner1.setTelephone("11111111");
+        
+        Pet pet1 = new Pet();
+        pet1.setPetType(savedDogPetType);
+        pet1.setOwner(owner1);
+        pet1.setBirthDate(LocalDate.now());
+        pet1.setName("Pet One");
+        owner1.getPets().add(pet1);
+        
         ownerService.save(owner1);
         
         Owner owner2 = new Owner();
         owner2.setFirstName("Owner");
         owner2.setLastName("Two");
+        owner2.setAddress("Address Two Street");
+        owner2.setCity("CityTwo");
+        owner2.setTelephone("22222222");
+        
+        Pet pet2 = new Pet();
+        pet2.setPetType(savedCatPetType);
+        pet2.setOwner(owner2);
+        pet2.setBirthDate(LocalDate.now());
+        pet2.setName("Pet Two");
+        owner2.getPets().add(pet2);
+        
         ownerService.save(owner2);
         
         System.out.println("Loaded Owners....");
