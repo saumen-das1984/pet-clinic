@@ -3,6 +3,7 @@ package com.spring.framework.guru.service.springdatajpa;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.spring.framework.guru.model.Owner;
@@ -12,6 +13,7 @@ import com.spring.framework.guru.repository.PetTypeRepository;
 import com.spring.framework.guru.service.OwnerService;
 
 @Service
+@Profile("springdatajpa")
 public class OwnerSDJpaService implements OwnerService {
 	
 	private final OwnerRepository ownerRepository;
