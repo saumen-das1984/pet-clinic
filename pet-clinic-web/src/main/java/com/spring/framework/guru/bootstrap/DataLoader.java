@@ -10,10 +10,12 @@ import com.spring.framework.guru.model.Pet;
 import com.spring.framework.guru.model.PetType;
 import com.spring.framework.guru.model.Speciality;
 import com.spring.framework.guru.model.Vet;
+import com.spring.framework.guru.model.Visit;
 import com.spring.framework.guru.service.OwnerService;
 import com.spring.framework.guru.service.PetTypeService;
 import com.spring.framework.guru.service.SpecialityService;
 import com.spring.framework.guru.service.VetService;
+import com.spring.framework.guru.service.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,13 +24,15 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialtyService;
+	private final VisitService visitService;
 
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-			SpecialityService specialtyService) {
+			SpecialityService specialtyService, VisitService visitService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialtyService = specialtyService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -89,6 +93,12 @@ public class DataLoader implements CommandLineRunner {
 		owner2.getPets().add(pet2);
 
 		ownerService.save(owner2);
+		
+		Visit petVisit = new Visit();
+		petVisit.setPet(pet2);
+		petVisit.setDate(LocalDate.now());
+		petVisit.setDescription("Pet2 Visit");
+		visitService.save(petVisit);
 
 		System.out.println("Loaded Owners....");
 
