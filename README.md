@@ -1,0 +1,1 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/saumen-das1984/pet-clinic/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/saumen-das1984/pet-clinic/tree/master)
