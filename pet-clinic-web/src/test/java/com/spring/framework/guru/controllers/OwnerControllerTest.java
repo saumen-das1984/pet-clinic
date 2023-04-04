@@ -1,8 +1,10 @@
 package com.spring.framework.guru.controllers;
 
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
@@ -70,6 +72,15 @@ class OwnerControllerTest {
 				.andExpect(view().name("notimplemented"));
 		
 		verifyNoInteractions(ownerService);
+	}
+	
+	@Test
+	void testDisplayOwners() throws Exception {
+		when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
+		
+		mockMvc.perform(get("/owners/123"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("owners/ownerDetails"));
 	}
 
 }
